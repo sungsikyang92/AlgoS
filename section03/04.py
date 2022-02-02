@@ -9,4 +9,4 @@ s_list = []
 # print(s_list)
 s_list = n_list + m_list
 s_list.sort()
-print(s_list)
+print(*s_list)
