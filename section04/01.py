@@ -4,6 +4,7 @@ n_list = list(map(int, input().split()))
 # print(n_list)
 n_list.sort()
 # print(n_list)
+
 def binary_search(n_list, n, m):
     l_ptr = 0
     r_ptr = n - 1
