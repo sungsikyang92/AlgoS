@@ -25,4 +25,4 @@ for i in seq:
 while stk:
     result.append(stk.pop())
 
-print(*result)
+print(''.join(result))

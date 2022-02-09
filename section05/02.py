@@ -1,16 +1,16 @@
 # 쇠막대기
 
 stick = input()
-stck= []
+stk = []
 cnt = 0
 for i in range(len(stick)):
     if stick[i] == '(':
-        stck.append(i)
+        stk.append(i)
     elif stick[i] == ')' and stick[i - 1] == '(':
-        stck.pop()
-        cnt += len(stck)
+        stk.pop()
+        cnt += len(stk)
     elif stick[i] == ')':
-        stck.pop()
+        stk.pop()
         cnt += 1
 
 print(cnt)
