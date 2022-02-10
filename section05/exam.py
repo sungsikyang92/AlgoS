@@ -1,22 +1,14 @@
-from collections import deque
-
-n, m = map(int, input().split())
-lst = list(map(int, input().split()))
-lst = [(lst[i], i) for i in range(n)]
-lst = deque(lst)
-res = []
-
+# 최대힙
+import heapq
+heap = []
 while True:
-    print("S", lst[0][0])
-    print("m", max(lst)[0])
-    if lst[0][0] < max(lst)[0]:
-        pt = lst.popleft()
-        lst.append(pt)
-
+    n = int(input())
+    if n == -1:
+        break
+    if n == 0:
+        if len(heap) == 0:
+            print(-1)
+        else:
+            print(-1 * heapq.heappop(heap))
     else:
-        pt = lst.popleft()
-        res.append(pt)
-        print(res[-1][1])
-        if res[-1][1] == m:
-            break
-print(len(res))
+        heapq.heappush(heap, -n)
