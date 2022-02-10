@@ -1,32 +1,18 @@
-# 응급실
-from collections import deque
+# 교육과정 설계
 
-n, m = map(int, input().split())
-waiting = list(map(int, input().split()))
-# waiting = [(waiting[i], i) for i in range(n)]
-# waiting = enumerate(waiting)
-# enumerate한 상태에서 sort(key =lambda) 정렬 안됨. 어떻게해야할까..?
-waiting = [(waiting[i], i) for i in range(n)]
-waiting = deque(waiting)
-# print(waiting[2][1])
-result = []
-# print(max(waiting)[1])
-while True:
-    # print("s", waiting[0][1])
-    # print("max", max(waiting)[1])
-    # print("max", max[0](waiting))
-    if waiting[0][0] < (max(waiting)[0]):
-        tmp = waiting.popleft()
-        waiting.append(tmp)
+req = input()
+# print(req)
+n = int(input())
+for i in range(n):
+    sch = input()
+    req_1 = list(req)
+    for k in sch:
+        if k in req_1:
+            if k != req_1.pop(0):
+                print("#%d NO" % (i + 1))
+                break
     else:
-        tmp = waiting.popleft()
-        result.append(tmp)
-        # print(result[-1][0])
-        if result[-1][1] == m:
-            break
-
-print(len(result))
-# for i, v in result:
-#     if i == m:
-#         print(i)
-# print(result)
+        if len(req_1) == 0:
+            print("#%d YES" %(i + 1))
+        else:
+            print("#%d NO" %(i + 1))
