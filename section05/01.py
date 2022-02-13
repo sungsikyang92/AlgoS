@@ -12,4 +12,5 @@ for i in num:
 # print(m)
 if m != 0:
     stk = stk[:-m]
+
 print(''.join(stk))
