@@ -2,17 +2,20 @@
 import sys
 
 
-def DFS(idx, sum):
-    if idx == n:
+def DFS(L, sum):
+    if L == n:
         if sum == (total - sum):
             print("YES")
+            # return
             sys.exit(0)
     else:
-        DFS(idx + 1, sum + n_list[idx])
-        DFS(idx + 1, sum)
+        DFS(L + 1, sum + n_list[L])
+        DFS(L + 1, sum)
 
 if __name__=="__main__":
     n = int(input())
     n_list = list(map(int, input().split()))
     total = sum(n_list)
     DFS(0, 0)
+    print("NO")
+    # print(DFS(0, 0))

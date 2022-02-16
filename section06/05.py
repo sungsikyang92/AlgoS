@@ -1,16 +1,16 @@
 # 바둑이 승차(DFS)
-def DFS(idx, sum, rest_sum):
+def DFS(L, sum, rest_sum):
     global result
     if sum + (total - rest_sum) < result:
         return
     if sum > c:
         return
-    if idx == n:
+    if L == n:
         if sum > result:
             result = sum
     else:
-        DFS(idx + 1, sum + dog_weight[idx], rest_sum + dog_weight[idx])
-        DFS(idx + 1, sum, rest_sum + dog_weight[idx])
+        DFS(L + 1, sum + dog_weight[L], rest_sum + dog_weight[L])
+        DFS(L + 1, sum, rest_sum + dog_weight[L])
 
 if __name__=="__main__":
     c, n = map(int, input().split())

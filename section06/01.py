@@ -7,13 +7,13 @@ cnt = 0
 def make_binary_num(n):
     global result
     global cnt
+    result += (n % 2) * (10 ** cnt)
+    cnt += 1
     if n > 1:
-        result += (n % 2) * (10 ** cnt)
-        cnt += 1
         make_binary_num(n // 2)
     else:
-        result += (n % 2) * (10 ** cnt)
-        cnt += 1
+        # result += (n % 2) * (10 ** cnt)
+        # cnt += 1
         result += (n // 2) * (10 ** cnt)
     return result
 

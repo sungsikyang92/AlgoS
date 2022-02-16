@@ -1,8 +1,8 @@
 # 부분집합 구하기(DFS)
 
 def DFS(v):
-    if v == n+1:
-        for i in range(1, n + 1):
+    if v == n + 1:
+        for i in range(n + 1):
             if chk[i] == 1:
                 print(i, end=' ')
         print()
