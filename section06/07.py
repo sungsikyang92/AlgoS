@@ -1,7 +1,7 @@
 # 동전교환
 def DFS(Level, sum):
     global result
-    if Level >= result:
+    if Level >= result:         #cut - edge... 
         return
     if sum > m:
         return
@@ -11,6 +11,7 @@ def DFS(Level, sum):
     else:
         for i in range(n):
             DFS(Level + 1, sum + n_type[i])
+            print(Level, sum)
 
 if __name__=="__main__":
     n = int(input())
