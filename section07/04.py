@@ -16,7 +16,7 @@ k = int(input())
 coin = []
 coin_value = []
 for _ in range(k):
-    a, b = map(int,input().split())
+    a, b = map(int, input().split())
     coin.append(a)
     coin_value.append(b)
 cnt = 0
