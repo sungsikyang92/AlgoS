@@ -1,10 +1,11 @@
-# 부분합
+# 부분합 >> 투포인터
+# https://www.acmicpc.net/problem/1806
 
 from collections import deque
 
-n, s = map(int, input().split())
+# n, s = map(int, input().split())
 # print(n, s)
-arr = list(map(int, input().split()))
+# arr = list(map(int, input().split()))
 
 # 시간초과!!
 
@@ -30,6 +31,9 @@ arr = list(map(int, input().split()))
 #
 # print(min(r_len))
 
+n, s = map(int, input().split())
+arr = list(map(int, input().split()))
+
 l_ptr, r_ptr = 0, 0
 result = 100001
 tmp_sum = arr[0]
@@ -39,10 +43,10 @@ while True:
         tmp_sum -= arr[l_ptr]
         result = min(result, r_ptr - l_ptr + 1)
         l_ptr += 1
+    elif r_ptr == n - 1:
+        break
     else:
         r_ptr += 1
-        if r_ptr == n:
-            break
         tmp_sum += arr[r_ptr]
 
 if result == 100001:
