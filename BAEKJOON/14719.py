@@ -21,6 +21,6 @@ while l_ptr < r_ptr:
         l_ptr += 1
     else:
         result += max_right - rainfall[r_ptr]
-        r_ptr += 1
+        r_ptr -= 1
 
 print(result)
