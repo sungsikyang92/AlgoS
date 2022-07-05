@@ -1,3 +1,25 @@
+
+
+# from itertools import permutations
+#
+# numbers = [6,10,2]
+# numbers = list(map(str, numbers))
+# numbers = list(permutations(numbers, 3))
+# # print(numbers)
+# tmp = []
+# for x in numbers:
+#     tmp2 = ''
+#     for y in x:
+#         tmp2 += y
+#     tmp.append(tmp2)
+# # print(tmp)
+# max = -1
+# for x in tmp:
+#     x = int(x)
+#     if x > max:
+#         max = x
+# print(str(max))
+
 # from itertools import permutations
 #
 numbers = [6, 10, 2]
