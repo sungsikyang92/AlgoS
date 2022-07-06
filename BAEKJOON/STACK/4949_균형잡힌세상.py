@@ -1,27 +1,25 @@
 while True:
+    str = input()
+    if str == '.':
+        break
     stack = []
-    str = input().rstrip()
-    print(str)
-    # if str == '.':
-    #     break
-    # for x in str:
-    #     if x == "(":
-    #         stack.append(x)
-    #     elif x == "[":
-    #         stack.append(x)
-    #     elif x == ")":
-    #         if len(stack)==0:
-    #             print("no")
-    #             break
-    #         else:
-    #             stack.pop()
-    #     elif x == "]":
-    #         if len(stack)==0:
-    #             print("no")
-    #             break
-    #         else:
-    #             stack.pop()
-    # if stack:
-    #     print("no")
-    # else:
-    #     print("yes")
+    chk = True
+    for x in str:
+        if x == "(" or x == "[":
+            stack.append(x)
+        elif x == ")":
+            if not stack or stack[-1] == "[":
+                chk = False
+                break
+            elif stack[-1] == "(":
+                stack.pop()
+        elif x == "]":
+            if not stack or stack[-1] == "(":
+                chk = False
+                break
+            elif stack[-1] == "[":
+                stack.pop()
+    if chk == True and not stack:
+        print("yes")
+    else:
+        print("no")
