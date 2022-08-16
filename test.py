@@ -15,3 +15,4 @@ print(S)
 
 N = int(N)+1
 print(S+str(N))
+print(S+str(N))
