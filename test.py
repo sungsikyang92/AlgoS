@@ -1,11 +1,7 @@
-t = "1+2+3"
-
-print(t)
-tmp = 0
-for i in t:
-    if i.isnumeric():
-        tmp += int(i)
-    else:
-        tmp += i
-
-print(tmp)
+import re
+t = "10S"
+dartResult = "1D2S#10S"
+sp = re.findall('\d+', t)
+sp2 = re.findall('\d+', dartResult)
+print(sp)
+print(sp2)
