@@ -10,6 +10,7 @@ def solution(sizes):
     print(tmp[-1][1])
     tmp_1 = tmp[-1][0]
     tmp[-1][0] = tmp[-1][1]
+    tmp[-1][0] = tmp[-1][1]
     tmp[-1][1] = tmp_1
     tmp_2 = sorted(tmp, key=lambda x: (-x[0], x[1]))
     # print(tmp_2)
