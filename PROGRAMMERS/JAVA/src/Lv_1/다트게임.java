@@ -7,45 +7,43 @@ import java.util.List;
 public class 다트게임 {
     public static int solution(String dartResult) {
         int answer = 0;
+        int[] result = new int[3];
         char[] dR = dartResult.toCharArray();
-        int tmp = Integer.parseInt(String.valueOf(dR[0]));
-        int[] dR_tmp = new int[3];
-        int idx = 0;
-        for (int i = 1; i < dartResult.length(); i++) {
-            if (Character.isDigit(dR[i])) {
-                dR_tmp[idx] = tmp;
-                tmp = 0;
-                idx++;
-                tmp += Integer.parseInt(String.valueOf(dR[i]));
-            } else if (!Character.isDigit(dR[i])){
-                if (Character.isLetter(dR[i])) {
-                    if (dR[i] == 'S') {
-                        tmp *= Math.pow(tmp, 1);
-                    } else if (dR[i] == 'D') {
-                        tmp *= Math.pow(tmp, 2);
-                    } else if (dR[i] == 'T') {
-                        tmp *= Math.pow(tmp, 3);
+        int idx = 0, num = 0;
+        String make_num = "";
+        for (int i = 0; i < dartResult.length(); i++) {
+            if (dR[i] >= '0' && dR[i] <= '9') {
+                make_num += dR[i];
+            } else if (Character.isLetter(dR[i])) {
+                num = Integer.parseInt(make_num);
+                if (dR[i] == 'S') {
+                    result[idx++] = (int) Math.pow(num, 1);
+                } else if (dR[i] == 'D') {
+                    result[idx++] = (int) Math.pow(num, 2);
+
+                } else if (dR[i] == 'T') {
+                    result[idx++] = (int) Math.pow(num, 3);
+                }
+                make_num = "";
+            } else {
+                if (dR[i] == '*') {
+                    result[idx - 1] *= 2;
+                    if (idx - 2 >= 0) {
+                        result[idx - 2] *= 2;
                     }
-                } else if (dR[i] == '*') {
-                    if (idx == 0) {
-                        tmp *= 2;
-                    } else {
-                        dR_tmp[idx - 1] *= 2;
-                        tmp *= 2;
-                    }
-                } else if (dR[i] == '#') {
-                    tmp *= -1;
+                } else {
+                    result[idx - 1] *= -1;
                 }
             }
         }
-        dR_tmp[dR_tmp.length - 1] = tmp;
-        System.out.println(Arrays.toString(dR_tmp));
-        answer = Arrays.stream(dR_tmp).sum();
+        answer = Arrays.stream(result).sum();
         return answer;
     }
 
     public static void main(String[] args) {
         String dartResult = "1S2D*3T";
+//        String dartResult = "1D2S#10S";
+//        String dartResult = "10D4S10D";
         int result = solution(dartResult);
         System.out.println(result);
     }
