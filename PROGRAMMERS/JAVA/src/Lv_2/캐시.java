@@ -29,6 +29,5 @@ public class 캐시 {
         int cacheSize = 3;
         String[] cities = {"Jeju", "Pangyo", "Seoul", "NewYork", "LA", "Jeju", "Pangyo", "Seoul", "NewYork", "LA"};
         int result = solution(cacheSize, cities);
-        System.out.println("결과는" + result);
     }
 }
