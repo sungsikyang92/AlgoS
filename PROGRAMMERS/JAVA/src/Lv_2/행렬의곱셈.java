@@ -1,7 +1,5 @@
 package Lv_2;
 
-import java.util.Arrays;
-
 public class 행렬의곱셈 {
     public static int[][] solution(int[][] arr1, int[][] arr2) {
         int[][] answer = new int[arr1.length][arr2[0].length];
