@@ -27,8 +27,8 @@ public class 튜플 {
 
     public static void main(String[] args) {
 //        String s = "{{2},{2,1},{2,1,3},{2,1,3,4}}";
-        String s = "{{20,111},{111}}";
-//        String s = "{{1,2,3},{2,1},{1,2,4,3},{2}}";
+//        String s = "{{20,111},{111}}";
+        String s = "{{1,2,3},{2,1},{1,2,4,3},{2}}";
         int[] result = solution(s);
         System.out.println(Arrays.toString(result));
     }
