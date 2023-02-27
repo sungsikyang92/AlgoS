@@ -21,10 +21,8 @@ public class k진수에서소수개수구하기 {
     }
     public static int solution(int n, int k) {
         int answer = 0;
-        System.out.println(Integer.toString(n,k));
         String nums = Integer.toString(n, k);
         String[] tmp = nums.split("0");
-        System.out.println(Arrays.toString(tmp));
         for (int i = 0; i < tmp.length; i++) {
             if (tmp[i].matches(".*\\d+.*")) {
                 if (isPrime(Long.parseLong(tmp[i])) == 1) {
