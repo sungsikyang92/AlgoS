@@ -9,9 +9,14 @@ public class 압축 {
         List<Integer> answer = new ArrayList<>();
         HashMap<String, Integer> dict = new HashMap<>();
         char word = 'A' - 1;
-        System.out.println(word);
         for (int i = 1; i < 27; i++) {
             dict.put(Character.toString(word + i), i);
+        }
+        int idx = 27;
+        boolean isEnd = false;
+
+        for (int i = 0; i < msg.length(); ++i) {
+
         }
 
         return answer;
