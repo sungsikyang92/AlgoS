@@ -15,10 +15,24 @@ public class 압축 {
         int idx = 27;
         boolean isEnd = false;
 
-        for (int i = 0; i < msg.length(); ++i) {
-
+        for (int i = 0; i < msg.length(); i++) {
+            String new_word = Character.toString(msg.charAt(i));
+            while (dict.containsKey(new_word)) {
+                i++;
+                if (i == msg.length()) {
+                    isEnd = true;
+                    break;
+                }
+                new_word += msg.charAt(i);
+            }
+            if (isEnd) {
+                answer.add(dict.get(new_word));
+                break;
+            }
+            answer.add(dict.get(new_word.substring(0, new_word.length() - 1)));
+            dict.put(new_word, idx++);
+            i--;
         }
-
         return answer;
     }
 
