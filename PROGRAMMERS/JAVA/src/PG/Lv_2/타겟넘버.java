@@ -7,7 +7,6 @@ public class 타겟넘버 {
         return answer;
     }
     public static void dfs(int[] numbers, int depth, int target, int sum) {
-        System.out.println(sum);
         if (depth == numbers.length) {
             if (target == sum) {
                 answer++;
