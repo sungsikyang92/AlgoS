@@ -11,7 +11,7 @@ public class 주차요금계산 {
         int parkingTime = 0;
         for (int i = 0; i < records.length; i++) {
             String[] info = records[i].split(" ");
-            if (inAndOut.containsKey(info[1]) && info[2].equals("OUT")) {
+            if (inAndOut.containsKey(info[1])) {
                 Integer inTime = inAndOut.get(info[1]);
                 Integer outTime = timeToMin(info[0]);
                 parkingTime = outTime - inTime;
@@ -29,7 +29,6 @@ public class 주차요금계산 {
                 Integer outTime = (23 * 60) + 59;
                 parkingTime = outTime - inTime;
                 parkingTimeByCar.put(key, parkingTimeByCar.getOrDefault(key, 0) + parkingTime);
-                inAndOut.remove(key);
             }
         }
 
