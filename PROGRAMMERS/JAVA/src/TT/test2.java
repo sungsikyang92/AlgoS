@@ -57,7 +57,7 @@ public class test2 {
 //        int k = 2;
 //        int[] h = {1,2,3,4,5};
         int n = 6;
-        int k = 3;
+        int k = 2;
         int[] h = {6,5,4,3,2,1};
         int result = solution(n, k, h);
         System.out.println("결과는 = "+result);
